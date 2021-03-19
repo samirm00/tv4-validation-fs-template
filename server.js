@@ -1,42 +1,30 @@
-'use strict';
+"use strict";
 
-const fs = require('fs');
-const path = require('path');
+const express = require("express");
+const cors = require("cors");
+const mongoose = require("mongoose");
+require("dotenv").config();
+const posts = require("./routes/postRoutes");
 
-const express = require('express');
-const bodyParser = require('body-parser');
-const morgan = require('morgan');
-const cors = require('cors');
-
-const api = require('./api');
-const config = require('./config');
-
+// initiate express
 const app = express();
-
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
 
-app.use(morgan('combined', {
-  stream: fs.createWriteStream(
-    path.join(__dirname, 'access.log'),
-    { flags: 'a' }
-  )
-}));
-if (config.MODE === 'development') {
-  app.use(morgan('dev'));
-};
+// set up routes
+app.use("/posts", posts);
 
-app.use('/', express.static(path.join(__dirname, 'client')));
+// set up the port
+const PORT = process.env.PORT || 5000;
+console.log("starting server");
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 
-app.use('/api', api);
-
-app.use(function (err, req, res, next) {
-  console.error(err.stack);
-  res.status(500).end();
+// set up mongoose
+console.log("connecting to MongoDB ");
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 });
-
-app.listen(config.PORT, () => {
-  console.log(
-    `listening at http://localhost:${config.PORT} (${config.MODE} mode)`
-  );
+mongoose.connection.on("connected", () => {
+  console.log("Mongoose is connected ");
 });
