@@ -21,13 +21,21 @@ router.post("/", async (req, res) => {
 });
 
 router.get("/", async (req, res) => {
-  const allPosts = await Post.find();
-  res.json(allPosts);
+  try {
+    const allPosts = await Post.find();
+    res.json(allPosts);
+  } catch (err) {
+    console.error(err);
+  }
 });
 
 router.get("/:id", async (req, res) => {
-  const onePost = await Post.findById(req.params.id);
-  res.json(onePost);
+  try {
+    const onePost = await Post.findById(req.params.id);
+    res.json(onePost);
+  } catch (err) {
+    console.error(err);
+  }
 });
 
 module.exports = router;
