@@ -1,4 +1,4 @@
-# Courses APP
+# My Blog
 
 > A personal Full-stack Blog, allows the user to read all the blog and read a specific Blog
 
