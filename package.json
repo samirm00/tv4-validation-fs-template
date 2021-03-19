@@ -1,15 +1,23 @@
 {
-  "name": "my blog",
+  "name": "tv4-validation-fs-template",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": " node server.js",
-    "div": " nodemon server.js"
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samirm00/tv4-validation-fs-template.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samirm00/tv4-validation-fs-template/issues"
+  },
+  "homepage": "https://github.com/samirm00/tv4-validation-fs-template#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",

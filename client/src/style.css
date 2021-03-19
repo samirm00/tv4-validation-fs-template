@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&family=Roboto:ital,wght@1,100&display=swap");
+
+/*General style */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+button {
+  border: none;
+}
+
+img {
+  height: 500px;
+  width: auto;
+  margin-top: 2rem;
+}
+:root {
+  --navbar-color: rgb(230, 215, 215);
+  --link-color: rgb(14, 1, 1);
+  --link-color-hover: rgb(46, 58, 216);
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  background-color: var(--navbar-color);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+}
+.container {
+  margin: 0 auto;
+  width: 800px;
+  padding: 0 1rem;
+}
+.container h2 {
+  margin-top: 5rem;
+}
+
+.container p {
+  display: block;
+  margin-top: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar .container {
+  height: 100%;
+}
+.navbar .flex-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.navbar h1 {
+  font-size: 1.9rem;
+}
+.navbar .links a {
+  font-size: 1.2rem;
+  font-weight: bolder;
+  color: var(--link-color);
+}
+
+.navbar .links a:hover {
+  color: var(--link-color-hover);
+  font-weight: bold;
+}
+
+/*Post List*/
+
+.post-list {
+  margin-top: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.post-list-item {
+  margin: 20px;
+  background-color: rgb(26, 27, 27);
+}
+.btn {
+  background-color: rgb(230, 215, 215);
+  padding: 10px;
+  border-radius: 5px;
+}
+.title {
+  font-weight: bolder;
+  color: rgb(18, 19, 18);
+}
+.date {
+  color: rgb(8, 138, 138);
+}
+.tags {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: rgb(9, 9, 228);
+}
+
+.one-post {
+  margin-top: 7rem;
+  margin-left: 12rem;
+  margin-right: 12rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+}
+.img-item {
+  margin-top: 1rem;
+  margin-right: 12rem;
+  margin-left: 12rem;
+  width: 500px;
+}
