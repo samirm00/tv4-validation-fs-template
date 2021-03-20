@@ -19,12 +19,16 @@ const PORT = process.env.PORT || 5000;
 console.log("starting server");
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 
-// set up mongoose
-console.log("connecting to MongoDB ");
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
-mongoose.connection.on("connected", () => {
-  console.log("Mongoose is connected ");
-});
+try {
+  // set up mongoose
+  console.log("connecting to MongoDB ");
+  mongoose.connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+  mongoose.connection.on("connected", () => {
+    console.log("Mongoose is connected ");
+  });
+} catch (err) {
+  console.error(err);
+}

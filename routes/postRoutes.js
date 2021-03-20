@@ -3,15 +3,16 @@ const router = require("express").Router();
 const Post = require("../models/postModel.js");
 
 router.post("/", async (req, res) => {
-  const { title, createdAt, tags, html } = req.body;
-
-  const newPost = new Post({
-    title,
-    createdAt,
-    tags,
-    html,
-  });
   try {
+    const { title, createdAt, tags, html } = req.body;
+
+    const newPost = new Post({
+      title,
+      createdAt,
+      tags,
+      html,
+    });
+
     // save
     const savedPost = await newPost.save();
     res.json(savedPost);
