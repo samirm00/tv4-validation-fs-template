@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "cd client && yarn install && yarn run build && cd .. && yarn install && node server.js",
+    "dev": "cd client && yarn start",
     "heroku-postbuild": "cd client && yarn && yarn run build"
   },
   "repository": {
