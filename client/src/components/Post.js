@@ -15,7 +15,7 @@ class Post extends React.Component {
   }
 
   renderHTML() {
-    return { __html: this.state.post.html };
+    return this.state.post.html;
   }
 
   renderPost() {
