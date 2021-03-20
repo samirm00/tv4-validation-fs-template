@@ -15,7 +15,7 @@ app.use(express.json());
 app.use("/", express.static(path.join(__dirname, "client", "build")));
 
 // set up routes
-app.use("https://my-personal-blo.herokuapp.com/posts", posts);
+app.use("/posts", posts);
 
 // set up the port
 const PORT = process.env.PORT || 5000;
