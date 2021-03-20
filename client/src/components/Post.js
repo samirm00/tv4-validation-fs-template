@@ -10,9 +10,7 @@ class Post extends React.Component {
     this.getPost();
   }
   async getPost() {
-    const res = await axios.get(
-      `http://localhost:5000/posts/${this.props.match.params.id}`
-    );
+    const res = await axios.get(`/posts/${this.props.match.params.id}`);
     this.setState({ post: res.data });
   }
 

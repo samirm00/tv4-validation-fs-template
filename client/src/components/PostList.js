@@ -10,7 +10,7 @@ class PostList extends React.Component {
     this.getPosts();
   }
   async getPosts() {
-    const res = await axios.get("http://localhost:5000/posts/");
+    const res = await axios.get("/posts/");
     this.setState({ posts: res.data });
   }
 
