@@ -14,17 +14,13 @@ class Post extends React.Component {
     this.setState({ post: res.data });
   }
 
-  renderHTML() {
-    return this.state.post.html;
-  }
-
-  renderPost() {
-    return <div dangerouslySetInnerHTML={this.renderHTML()}></div>;
-  }
   render() {
     return (
       <div>
-        <div className="one-post">{this.renderPost()}</div>
+        <div
+          className="one-post"
+          dangerouslySetInnerHTML={this.state.post.html}
+        ></div>
         <img className="img-item" src={programming} alt="programming" />
       </div>
     );
